@@ -1,1 +1,1 @@
-# quiz_application
+This application allow users to take questions in a dataset and review the ones they have already answered.

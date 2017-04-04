@@ -1,71 +1,33 @@
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 	<meta charset="UTF-8">
-<title>Welcome to ThoughtWorks Social Networking</title>
-<meta name="description" content="Welcome to ThoughtWorks Social Networking connects people to share their thoughs with their friends and collegues."/>
-<meta name="keywords" content="ThoughtWorks, Social Networking Social networking website"/>
-<link rel="stylesheet" href="../static/css/style.css">
+	<title>Welcome to TestMax Quiz Application</title>
+	<meta name="description" content="Welcome to the TestMax Quiz Application."/>
+	<meta name="keywords" content="TestMax, Quiz Application"/>
+	<link rel="stylesheet" href="static/css/quiz_style.css">
+
+	<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
 </head>
+
 <body>
-<div class="wrap">
-<div class="header">
-	<div id="logo"><img src="../images/logo.jpg" width="300" height="85" style="margin-top:30px;" class="opa"></div>
-</div>
-</div>
-<div class="menu_wrap">
-<div class="menu">
-<ul>
-<li><a href="index.html">ThoughtSocial</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Privacy Policy</a></li>
-</ul
+	<div id='container'>
+        <div>
+            <h2>TestMax Quiz Application</h2>
+            <div class='button' id='review'><a href='quizQuestions.html'>Back to Questions</a></div>
+        </div>
 
-</div>
-</div>
-<div class="wrap_content">
-<div class="container"><h2 style="text-align:center">Welcome to ThoughtWorks  Social</h2>
-<div class="contentequal">
-<div class="roundshape"><a href="profile.html"><h3>Go to your profile</h3></a></div>
-</div>
-<div class="contentequal">
-<div class="roundshape"><a href="quizQuestions.html"><h3>Go to Gallery</h3></a></div>
-</div>
+        <br/>
+        <div id='answers'></div>
 
-</div>
-</div>
-<div class="footwrap">
-<div class="foot">
-	<div id="col1">
-		<h2>About Us</h2>
-		<ul>
-			<li>Home</li>
-			<li>Home</li>
-			<li>Home</li>
-			<li>Home</li>
-		</ul>
-	</div>
-	<div id="col1">
-		<h2>QuickLinks</h2>
-		<ul>
-			<li>Home</li>
-			<li>Home</li>
-			<li>Home</li>
-			<li>Home</li>
-		</ul>
-	</div>
-	<div id="col1">
-	<h2>Whats New?</h2>
-		<ul>
-			<li>Home</li>
-			<li>Home</li>
-			<li>Home</li>
-			<li>Home</li>
-		</ul>
-	</div>
-</div>
-</div>
+
+        <br />
+        <!--<div class='button' id='next'><a href='#'>Next</a></div>-->
+        <!--<div class='button' id='prev'><a href='#'>Prev</a></div>-->
+        <!--<div class='button' id='start'> <a href='#'>Start Over</a></div>-->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="static/js/review_answers.js"></script>
 </body>
 </html>

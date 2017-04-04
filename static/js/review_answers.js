@@ -2,8 +2,7 @@
 d3.csv("Question Set.csv", function(questions) {
     var questionCounter = 0; // Check the question number
     var selections = []; // Array storing the answers
-    var quiz = $('#quiz'); // Getting the quiz div element
-    var answers = $('#answers');
+    var quiz = $('#answers'); // Getting the quiz div element
 
     // Display initial question
     moveToNextQuestion();
@@ -61,40 +60,16 @@ d3.csv("Question Set.csv", function(questions) {
     });
 
     // Creates and returns the div that contains the questions and the answer selections
-    function createQuestionElement(index) {
+    function createReviewElement() {
         var qElement = $('<div>', {
-            id: 'question'
-        });
-
-        var reviewElement = $('<div>', {
-            id: 'question'
-        });
-
-        var header = $('<h2>Question ' + (index + 1) + ':</h2>');
-        qElement.append(header);
-
-        var question = $('<p>').append(questions[index].question);
-        qElement.append(question);
-
-        var radioButtons = createRadios(index);
-        qElement.append(radioButtons);
-
-        return qElement;
-    }
-
-    function createReviewElement(index, selections) {
-
-        var reviewElement = $('<div>', {
             id: 'review'
         });
+        console.log(global.localStorage.getItem("sharedSelection"))
+        var currentAnswers = $('<p>').append(global.localStorage.getItem("sharedCounter"), " : ",
+                                global.localStorage.getItem("sharedSelection")[global.localStorage.getItem("sharedCounter")]);
+        qElement.append(currentAnswers);
 
-        var header = $('<h2>Review Answers:</h2>');
-        reviewElement.append(header);
-
-        var currentAnswers = $('<p>').append(selections[index]);
-        reviewElement.append(currentAnswers);
-
-        return reviewElement;
+        return qElement;
     }
 
     // Creates a list of the answer choices as radio inputs
@@ -134,10 +109,7 @@ d3.csv("Question Set.csv", function(questions) {
             $('#question').remove();
 
             if(questionCounter < questions.length){
-                var nextQuestion = createQuestionElement(questionCounter);
-
-                global.localStorage.setItem("sharedSelection", selections);
-                global.localStorage.setItem("sharedCounter", questionCounter);
+                var nextQuestion = createReviewElement();
                 quiz.append(nextQuestion).fadeIn();
                 if (!(selections[questionCounter] < 'A' || selections[questionCounter] > 'E')) {
                     $('input[value='+selections[questionCounter]+']').prop('checked', true);

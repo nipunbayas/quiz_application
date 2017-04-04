@@ -1,5 +1,6 @@
 (function (global) {
 d3.csv("Question Set.csv", function(questions) {
+    //var questionCounter = global.localStorage.getItem("sharedCounter"); // Check the question number
     var questionCounter = 0; // Check the question number
     var selections = []; // Array storing the answers
     var quiz = $('#quiz'); // Getting the quiz div element
@@ -18,12 +19,13 @@ d3.csv("Question Set.csv", function(questions) {
         choose();
 
         // If no user selection, progress is stopped
-        if (selections[questionCounter] < 'A' || selections[questionCounter] > 'E') {
+        if (isNaN($('input[name="answer"]:checked').val())) {
             alert('Please select an answer!');
         } else {
             questionCounter++;
             moveToNextQuestion();
         }
+
     });
 
     // Move to the previous question
@@ -82,20 +84,6 @@ d3.csv("Question Set.csv", function(questions) {
         return qElement;
     }
 
-    function createReviewElement(index, selections) {
-
-        var reviewElement = $('<div>', {
-            id: 'review'
-        });
-
-        var header = $('<h2>Review Answers:</h2>');
-        reviewElement.append(header);
-
-        var currentAnswers = $('<p>').append(selections[index]);
-        reviewElement.append(currentAnswers);
-
-        return reviewElement;
-    }
 
     // Creates a list of the answer choices as radio inputs
     function createRadios(index) {
@@ -139,7 +127,7 @@ d3.csv("Question Set.csv", function(questions) {
                 global.localStorage.setItem("sharedSelection", selections);
                 global.localStorage.setItem("sharedCounter", questionCounter);
                 quiz.append(nextQuestion).fadeIn();
-                if (!(selections[questionCounter] < 'A' || selections[questionCounter] > 'E')) {
+                if (isNaN($('input[name="answer"]:checked').val())) {
                     $('input[value='+selections[questionCounter]+']').prop('checked', true);
                 }
 

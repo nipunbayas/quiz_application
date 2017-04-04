@@ -2,7 +2,7 @@ body
 {
 	margin:0px;
 	padding:0px;
-	font-family:"Trebuchet MS", Verdana, Thoma, Arial, Sans-serif;
+	font-family: Lato, sans-serif;
 }
 a:link
 {
@@ -23,7 +23,6 @@ text-decoration:none;
 .wrap
 {
 	background-color:#ffffff;
-height:150px;
 width:100%;
 
 	
@@ -269,17 +268,22 @@ width:100%;
 .gall_rotate
 {
 	transition:transform 0.5s ease-in;
-	-moz-transition:-moz-transform:rotate(360deg);
-	-0-transition:transform:rotate(360deg);
-	-webkit-transition:-webkit-transform:rotate(360deg);
-width=300px;
-height:180px;
+	width:300px;
+	height:180px;
 }
 .gall_rotate:hover
 {
 	transform:rotate(360deg);
 	-moz-transform:rotate(360deg);
-	-0-transform:rotate(360deg);;
 	-webkit-transform:rotate(360deg);
 	
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
 }

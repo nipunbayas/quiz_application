@@ -1,27 +1,30 @@
-(function() {
-  var questions = [{
-    question: "What is 2*5?",
-    choices: [2, 5, 10, 15, 20],
-    correctAnswer: 2
-  }, {
-    question: "What is 3*6?",
-    choices: [3, 6, 9, 12, 18],
-    correctAnswer: 4
-  }, {
-    question: "What is 8*9?",
-    choices: [72, 99, 108, 134, 156],
-    correctAnswer: 0
-  }, {
-    question: "What is 1*7?",
-    choices: [4, 5, 6, 7, 8],
-    correctAnswer: 3
-  }, {
-    question: "What is 8*8?",
-    choices: [20, 30, 40, 50, 64],
-    correctAnswer: 4
-  }];
 
-  var questionCounter = 0; //Tracks question number
+    d3.csv("Question Set.csv", function(questions) {
+
+        // var questions = [{
+        //     question: "What is 2*5?",
+        //     choices: [2, 5, 10, 15, 20],
+        //     correctAnswer: 2
+        // }, {
+        //     question: "What is 3*6?",
+        //     choices: [3, 6, 9, 12, 18],
+        //     correctAnswer: 4
+        //   }, {
+        //     question: "What is 8*9?",
+        //     choices: [72, 99, 108, 134, 156],
+        //     correctAnswer: 0
+        //   }, {
+        //     question: "What is 1*7?",
+        //     choices: [4, 5, 6, 7, 8],
+        //     correctAnswer: 3
+        //   }, {
+        //     question: "What is 8*8?",
+        //     choices: [20, 30, 40, 50, 64],
+        //     correctAnswer: 4
+        // }];
+
+
+        var questionCounter = 0; //Tracks question number
   var selections = []; //Array containing user choices
   var quiz = $('#quiz'); //Quiz div object
 
@@ -39,7 +42,7 @@
     choose();
 
     // If no user selection, progress is stopped
-    if (isNaN(selections[questionCounter])) {
+    if (selections[questionCounter] < 'A' || selections[questionCounter] > 'E') {
       alert('Please make a selection!');
     } else {
       questionCounter++;
@@ -47,7 +50,7 @@
     }
   });
 
-  // Click handler for the 'prev' button
+        // Click handler for the 'prev' button
   $('#prev').on('click', function (e) {
     e.preventDefault();
 
@@ -104,10 +107,12 @@
     var radioList = $('<ul>');
     var item;
     var input = '';
-    for (var i = 0; i < questions[index].choices.length; i++) {
+      var choices = [questions[index].answer_1, questions[index].answer_2, questions[index].answer_3,
+                        questions[index].answer_4, questions[index].answer_5];
+    for (var i = 0; i < choices.length; i++) {
       item = $('<li>');
       input = '<input type="radio" name="answer" value=' + i + ' />';
-      input += questions[index].choices[i];
+      input += choices[i];
       item.append(input);
       radioList.append(item);
     }
@@ -116,7 +121,18 @@
 
   // Reads the user selection and pushes the value to an array
   function choose() {
-    selections[questionCounter] = +$('input[name="answer"]:checked').val();
+      if($('input[name="answer"]:checked').val() == 0)
+          selections[questionCounter] = 'A';
+      else if($('input[name="answer"]:checked').val() == 1)
+          selections[questionCounter] = 'B';
+      else if($('input[name="answer"]:checked').val() == 2)
+          selections[questionCounter] = 'C';
+      else if($('input[name="answer"]:checked').val() == 3)
+          selections[questionCounter] = 'D';
+      else if($('input[name="answer"]:checked').val() == 4)
+          selections[questionCounter] = 'E';
+    //selections[questionCounter] = +$('input[name="answer"]:checked').val();
+      console.log(selections);
   }
 
   // Displays next requested element
@@ -155,7 +171,7 @@
 
     var numCorrect = 0;
     for (var i = 0; i < selections.length; i++) {
-      if (selections[i] === questions[i].correctAnswer) {
+      if (selections[i] === questions[i].correctval) {
         numCorrect++;
       }
     }
@@ -164,4 +180,7 @@
                  questions.length + ' right!!!');
     return score;
   }
-})();
+
+    });
+
+

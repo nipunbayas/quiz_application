@@ -4,7 +4,7 @@
 
     displayReviewPage();
 
-    // Animates buttons on hover
+    // Animate the button on hover
     $('.button').on('mouseenter', function () {
         $(this).addClass('active');
     });

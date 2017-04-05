@@ -141,6 +141,8 @@ d3.csv("Question Set.csv", function(questions) {
                 }
             }
             else {
+                global.localStorage.setItem("sharedSelection", selections);
+                global.localStorage.setItem("sharedCounter", questionCounter);
                 var scoreElem = displayScore();
                 quiz.append(scoreElem).fadeIn();
                 $('#next').hide();

@@ -6,284 +6,67 @@ body
 }
 a:link
 {
-text-decoration:none;
+    text-decoration:none;
 }
 a:visited
 {
-text-decoration:none;
+    text-decoration:none;
 }
 a:active
 {
-text-decoration:none;
+    text-decoration:none;
 }
 a:hover
 {
-text-decoration:none;
+    text-decoration:none;
 }
-.wrap
-{
-	background-color:#ffffff;
-width:100%;
 
-	
-}
 .header
 {
-width:960px;
-	height:150px;
+    width:960px;
+	height:100px;
 	margin-left:auto;
     margin-right:auto;
-}
-#logo
-{
-	width:300px;
-	height:100px;
-}
-.opa
-{
-	opacity:0.4;
-}
-.opa:hover
-{
-	opacity:0.9;
+    margin-top: 100px;
 }
 
-.menu_wrap
-{
-	width:100%;
-	height:50px;
-	background-color:#000000;
-}
-.menu
-{
-	width:960px;
-	height:50px;
-	margin-left:auto;
-	margin-right:auto;
-}
-.menu ul
-{
-	margin:0;
-	padding:0;
-	list-style:none;
-	
-}
-.menu ul li
-{
-	margin:0;
-	padding:0;
-	display:inline;
-	
-}
-.menu ul li a
-{
-	display:block;
-	height:50px;
-	width:140px;
-	float:left;
-	text-align:center;
-	line-height:50px;
-	color:#ffffff;
-}
-.menu ul li a:hover
-{
-	background-color:#CCCCCC;
-	color:#3399ff;
-}
-.wrap_content
-{
-	width:100%;
-	height:414px;
-}
 .container
 {
-	width:960px;
-	height:auto;
-	margin-left:auto;
-	margin-right:auto;
-	text-align:center;
-}
-.fullwidth
-{
-	width:960px;
-	height:auto;
-	margin-top:20px;
-	float:left;
-	margin-left:auto;
-}
-.contentleft
-{
-	width:600px;
-	height:300px;
-	margin-top:20px;
-	float:left;
-}
-.contentequal
-{
-	width:450px;
-	height:300px;
-	margin-top:20px;
-	float:left;
-	margin-left:auto;
-}
-.col1
-{
-	width:30%;
-	height:auto;
-	float:left;
-	margin-top:20px;
-	border:1px solid #888;
-	box-shadow:0 0 2px 2px #888;
-	
-	
-}
-.lspace
-{
-	margin-left:10px;
-	opacity:0.5;
-}
-.lspace:hover
-{
-	opacity:0.9;
-	box-shadow:0 0 2px 2px #888;
-	
-}
-.col2
-{
-	width:64%;
-	height:700px;;
-	float:left;
-	margin-top:20px;
-	border:1px solid #888;
-	box-shadow:0 0 2px 2px #888;
-	margin-left:30px;
-	text-align:left;
-	padding:10px;
-	
-}
-.co
-{
-	text-align:left;
-	margin-left:90px;
+	width:50%;
+    margin:auto;
+    padding: 0 25px 40px 10px;
+    background-color: #e6e6e6;
+    border:4px solid #B0E0E6;
+    border-radius:5px;
+    color: #000000;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px #888;
 }
 
-.roundshape
-{
-	width:200px;
-	height:200px;
-	line-height:200px;
-	border-radius:100px;
-	background-color:#33ccff;
-	margin-top:20px;
-	margin-left:auto;
-	margin-right:auto;
-	opacity:0.4;
-	text-align:center;
-	
-}
-.roundshape:hover
-{
-	opacity:0.9;
-	box-shadow:0 0 13px 13px #888;
-}
-.proinfo
-{
-	width:70px;
-	height:70px;
-	line-height:70px;
-	border-radius:35px;
-	background-color:#33ccff;
-	margin-top:20px;
-	opacity:0.4;
-	text-align:center;
-	float:left;
-	margin-left:10px;
-	
-}
-.proinfo:hover
-{
-	opacity:0.7;
-	box-shadow:0 0 3px 3px #888;
-}
-.rightform
-{
-	width:300px;
-	height:300px;
-	float:left;
-	background-color:#CCCCCC;
-	margin-top:20px;
-	padding:20px;
-	border-radius:10px;
-	box-shadow:0 0 2px 2px #888;
-}
-.logbut
-{
-	width:100px;
-	height:30px;
-	border-radius:10px;
-	background-color:#3399ff;
-	margin-left:auto;
-	margin-right:auto;
-	text-align:center;
-	line-height:30px;
-	
-}
-input[type=text]
-{
-	color:#FF0000;
-	width:170px;
-	height:30px;
-	box-shadow:0 0 2px 2px #ddd;
-	font-size:20px;
-	color:#0066cc;
-	border-radius:10px;
+.button {
+    border:4px solid;
+    border-radius:5px;
+    width: 100px;
+    padding-left:5px;
+    padding-right: 5px;
+    position: relative;
+    text-align: center;
+    background-color: #DCDCDC;
+    color: black;
+    margin: 0 2px 0 2px;
 }
 
-
-.footwrap
-{
-background-color:#333333;
-height:200px;
-width:100%;
-
-}
-.foot
-{
-	width:960px;
-	height:150px;
-	margin-left:auto;
-    margin-right:auto;
-	color:#FFFFFF;
+.button.active {
+    background-color: #F8F8FF;
+    color: #525252;
 }
 
-
-#col1
-{
-	width:300px;
-	float:left;
-	margin-top:20px;
-	margin-left:20px;
-	text-align:justify;
-}
-.gall_rotate
-{
-	transition:transform 0.5s ease-in;
-	width:300px;
-	height:180px;
-}
-.gall_rotate:hover
-{
-	transform:rotate(360deg);
-	-moz-transform:rotate(360deg);
-	-webkit-transform:rotate(360deg);
-	
+button {
+    position: relative;
+    float: none;
 }
 
-a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
+.button a {
     text-decoration: none;
-    color: initial;
+    color: black;
 }
